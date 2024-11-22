@@ -1,0 +1,157 @@
+{
+    "info": {
+      "name": "Feedback System API",
+      "description": "API para gerenciar feedbacks e serviços.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Autenticação",
+        "item": [
+          {
+            "name": "Registro de Usuário",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:3000/api/register",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["api", "register"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Login de Usuário",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:3000/api/login",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["api", "login"]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Serviços",
+        "item": [
+          {
+            "name": "Criar Serviço",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"name\": \"string\",\n  \"description\": \"string\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:3000/api/create",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["api", "create"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Listar Serviços",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:3000/api/",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["api"]
+              }
+            },
+            "response": []
+          }
+        ]
+      },
+      {
+        "name": "Feedbacks",
+        "item": [
+          {
+            "name": "Criar Feedback",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Authorization",
+                  "value": "Bearer {{token}}"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"content\": \"string\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:3000/api/services/:id/feedbacks",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["api", "services", ":id", "feedbacks"]
+              }
+            },
+            "response": []
+          },
+          {
+            "name": "Listar Feedbacks",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:3000/api/services/:id/feedbacks",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "3000",
+                "path": ["api", "services", ":id", "feedbacks"]
+              }
+            },
+            "response": []
+          }
+        ]
+      }
+    ]
+  }
+  
